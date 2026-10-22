@@ -1,0 +1,29 @@
+
+{
+  "manifest_version": 3,
+  "name": "Exportador de Telefones",
+  "version": "1.0.0",
+  "description": "Identifica números de telefone disponíveis na página do WhatsApp Web e exporta um CSV.",
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_title": "Exportador de telefones",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
